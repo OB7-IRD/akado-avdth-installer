@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<installation version="1.0">
+    <info>
+        <appname>AKaDo</appname>
+        <appversion>2.0-RC3</appversion>
+        <authors>
+            <author email="julien.lebranchu@ird.fr" name="Julien Lebranchu"/>
+            <author email="laurent.floch@ird.fr" name="Laurent Floch"/>
+            <author email="pascal.cauquil@ird.fr" name="Pascal Cauquil"/>
+        </authors>
+        <url>http://www.ot.ird.fr</url>
+        <uninstaller name="Uninstaller.jar" write="yes"/>
+        <javaversion>1.7</javaversion>
+        <requiresjdk>false</requiresjdk>
+        <writeinstallationinformation>no</writeinstallationinformation>
+        <run-privileged condition="izpack.windowsinstall.vista|izpack.windowsinstall.7"/>
+    </info>
+    <guiprefs width="800" height="600" resizable="no">
+        <laf name="looks">
+            <os family="windows"/>
+            <param name="variant" value="windows"/>
+        </laf>
+        <laf name="metouia">
+            <os family="unix"/>
+        </laf>
+        <modifier key="langDisplayType" value="native"/>
+        <modifier key="allXGap" value="0"/>
+        <modifier key="allYGap" value="0"/>
+        <modifier key="labelGap" value="2"/>
+        <modifier key="useButtonIcons" value="yes"/>
+        <modifier key="useHeadingPanel" value="yes"/>
+        <modifier key="useHeadingForSummary" value="yes"/>
+        <modifier key="headingLineCount" value="1"/>
+        <modifier key="headingFontSize" value="1.5"/>
+        <modifier key="headingBackgroundColor" value="0x00ffffff"/>
+        <modifier key="headingPanelCounter" value="text"/>
+    </guiprefs>
+    <locale>
+        <langpack iso3="eng"/>
+        <langpack iso3="fra"/>
+        <langpack iso3="spa"/>
+    </locale>
+    <resources>
+        <res id="installer.langsel.img" src="akado_content/img/logo_akado_h100.png"/>
+        <res id="Heading.image" src="akado_content/img/logo_akado_h100.png"/>
+        <res id="Installer.image" src="akado_content/img/ird_ot_228x223.png"/>
+	
+        <res id="LicencePanel.licence" parse="yes" src="akado_content/Licence.txt"/>
+        <res id="HTMLInfoPanel.readme" src="akado_content/Readme.txt"/>
+        <res id="TargetPanel.dir.windows" src="TargetDirWindows.txt"/>
+        <res id="TargetPanel.dir.unix" src="TargetDirUnix.txt" />
+        <!--<res id="installer.langsel.img" src="akado_content/img/akado-logo-medium.png"/>-->
+        <res src="izres/default_shortcut_spec.xml" id="shortcutSpec.xml"/>
+        <res src="izres/default_shortcut_spec_fr.xml" id="shortcutSpec.xml_fra"/>
+        <res src="izres/default_shortcut_spec_es.xml" id="shortcutSpec.xml_esp"/>
+        <res src="izres/unix_shortcut_spec_en.xml" id="Unix_shortcutSpec.xml"/>
+        <res src="izres/unix_shortcut_spec_fr.xml" id="Unix_shortcutSpec.xml_fra"/>
+        <res src="izres/unix_shortcut_spec_es.xml" id="Unix_shortcutSpec.xml_esp"/>
+        <!--<res id="ProcessPanel.Spec.xml" src="resources/processPanelSpec.xml"/>-->
+    </resources>
+    <panels>
+        <panel classname="HelloPanel"/>
+        <panel classname="HTMLInfoPanel" id="readme" />
+        <panel classname="LicencePanel"/>
+        <panel classname="ImgPacksPanel"/>
+        <panel classname="TargetPanel"/>
+        <panel classname="SummaryPanel" id="summarypanel"/>
+        <panel classname="InstallPanel"/>
+        <panel classname="ShortcutPanel" id="shortcutpanel"/>
+        <!--<panel classname="ProcessPanel"/>-->
+        <panel classname="SimpleFinishPanel"/>
+    </panels>
+    <variables>
+    
+        <variable name="InstallerFrame.logfilePath" value="$INSTALL_PATH/logs/install.log"/>
+        <!-- This means that the log name will be My-install and that
+        it will be stored at the root of the installation. -->
+        <!-- Any path is fine. If value is set to "Default" then
+        "$INSTALL_PATH/uninstall/install.log" is used. -->
+        <!-- And if variable isn't defined then no log is written. -->
+        <variable name="desktopshortcutcheckboxenabled" value="true"/>
+        <!-- This automatically checks the "Create Desktop Shortcuts"
+        button. Default value is "False". -->
+    </variables>
+    <packs>
+		<!--<pack name="ScriptWin" required="yes" preselected="yes" hidden="false" os="windows">
+			<description>Script batch</description>
+			<file src="C:\Users\jlebranc\Documents\Projets\AKaDo\akado_project\akado4avdth\AKaDo4AVDTH\akado.bat" targetdir="$INSTALL_PATH/" override="true"/>
+		</pack>
+		<pack name="ScriptUnix" required="yes" preselected="yes" hidden="false" os="unix">
+			<description>Script bash</description>
+			<file src="C:\Users\jlebranc\Documents\Projets\AKaDo\akado_project\akado4avdth\AKaDo4AVDTH\akado.sh" targetdir="$INSTALL_PATH/" override="true"/>
+		</pack> -->
+        <pack name="Core" preselected="yes" required="yes">
+            <description>All files of the AKado application.</description>
+
+            <fileset override="update"
+                     dir="akado_content/icons/" targetdir="$INSTALL_PATH/icons/"/>
+            <fileset override="update" dir="libs" targetdir="$INSTALL_PATH/libs/"/>
+            <fileset override="update" dir="akado_content/scripts" targetdir="$INSTALL_PATH/"/>
+            <executable targetfile="$INSTALL_PATH/akado.sh" stage="never">
+                <os family="unix"/>
+            </executable>
+            <executable targetfile="$INSTALL_PATH/uninstall.sh" stage="never">
+                <os family="unix"/>
+            </executable>
+            <fileset override="update" dir="akado_content/resource/shp" targetdir="$INSTALL_PATH/resource/shp"/>
+            <file override="update" src="akado_content/resource/akado_avdth_result_model.xlsx" targetdir="$INSTALL_PATH/resource/" />
+        </pack>
+        <pack name="Licence" preselected="yes" required="yes">
+            <description>Copy the AKado's licence.</description>
+            <file override="update"
+                  src="akado_content/Licence.txt" targetdir="$INSTALL_PATH/"/>
+        </pack>
+        <pack name="Readme" preselected="yes" required="yes">
+            <description>Copy the AKado's readme.</description>
+            <file override="update"
+                  src="akado_content/Readme.txt" targetdir="$INSTALL_PATH/"/>
+        </pack>   
+        <pack name="Documentation-PDF" preselected="yes" required="no">
+            <description>Copy the AKado's user documentation.</description>
+            <fileset override="update"
+                     dir="akado_content/doc/" targetdir="$INSTALL_PATH/doc/"/>
+        </pack>   
+       
+    </packs>
+    <native type="izpack" name="ShellLink.dll">
+        <os family="windows" />
+    </native>
+    <native type="izpack" name="ShellLink_x64.dll">
+        <os family="windows" />
+    </native>
+</installation>
