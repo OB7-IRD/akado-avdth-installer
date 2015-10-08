@@ -105,7 +105,7 @@
                 <os family="unix"/>
             </executable>
             <fileset override="update" dir="akado_content/resource/shp" targetdir="$INSTALL_PATH/resource/shp"/>
-            <file override="update" src="akado_content/resource/akado_avdth_result_model.xlsx" targetdir="$INSTALL_PATH/resource/" />
+            <!--<file override="update" src="akado_content/resource/akado_avdth_result_model.xlsx" targetdir="$INSTALL_PATH/resource/" />-->
         </pack>
         <pack name="Licence" preselected="yes" required="yes">
             <description>Copy the AKado's licence.</description>
