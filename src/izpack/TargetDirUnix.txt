@@ -1,1 +1,1 @@
-$HOME/AKaDo2
+/opt/AKaDo2
