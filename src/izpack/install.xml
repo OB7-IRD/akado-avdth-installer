@@ -2,7 +2,7 @@
 <installation version="1.0">
     <info>
         <appname>AKaDo</appname>
-        <appversion>2.0-RC5</appversion>
+        <appversion>2.0.0</appversion>
         <authors>
             <author email="julien.lebranchu@ird.fr" name="Julien Lebranchu"/>
             <author email="laurent.floch@ird.fr" name="Laurent Floch"/>
@@ -83,14 +83,14 @@
         button. Default value is "False". -->
     </variables>
     <packs>
-		<!--<pack name="ScriptWin" required="yes" preselected="yes" hidden="false" os="windows">
-			<description>Script batch</description>
-			<file src="C:\Users\jlebranc\Documents\Projets\AKaDo\akado_project\akado4avdth\AKaDo4AVDTH\akado.bat" targetdir="$INSTALL_PATH/" override="true"/>
-		</pack>
-		<pack name="ScriptUnix" required="yes" preselected="yes" hidden="false" os="unix">
-			<description>Script bash</description>
-			<file src="C:\Users\jlebranc\Documents\Projets\AKaDo\akado_project\akado4avdth\AKaDo4AVDTH\akado.sh" targetdir="$INSTALL_PATH/" override="true"/>
-		</pack> -->
+        <!--<pack name="ScriptWin" required="yes" preselected="yes" hidden="false" os="windows">
+                <description>Script batch</description>
+                <file src="C:\Users\jlebranc\Documents\Projets\AKaDo\akado_project\akado4avdth\AKaDo4AVDTH\akado.bat" targetdir="$INSTALL_PATH/" override="true"/>
+        </pack>
+        <pack name="ScriptUnix" required="yes" preselected="yes" hidden="false" os="unix">
+                <description>Script bash</description>
+                <file src="C:\Users\jlebranc\Documents\Projets\AKaDo\akado_project\akado4avdth\AKaDo4AVDTH\akado.sh" targetdir="$INSTALL_PATH/" override="true"/>
+        </pack> -->
         <pack name="Core" preselected="yes" required="yes">
             <description>All files of the AKado application.</description>
 

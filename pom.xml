@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>fr.ird</groupId>
     <artifactId>akado-avdth-installer</artifactId>
-    <version>2.0-RC5</version>    
+    <version>2.0.0</version>    
     <name>AKaDo :: AVDTH Installer</name>
     <description>AKaDo 4 AVDTH installer based on IzPack</description>
     <organization>
