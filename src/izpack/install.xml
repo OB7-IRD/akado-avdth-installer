@@ -2,7 +2,7 @@
 <installation version="1.0">
     <info>
         <appname>AKaDo</appname>
-        <appversion>2.0.1</appversion>
+        <appversion>2.0.2</appversion>
         <authors>
             <author email="julien.lebranchu@ird.fr" name="Julien Lebranchu"/>
             <author email="laurent.floch@ird.fr" name="Laurent Floch"/>
