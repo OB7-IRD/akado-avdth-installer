@@ -2,13 +2,13 @@
 <installation version="1.0">
     <info>
         <appname>AKaDo</appname>
-        <appversion>2.0.2</appversion>
+        <appversion>2.0.3</appversion>
         <authors>
             <author email="julien.lebranchu@ird.fr" name="Julien Lebranchu"/>
             <author email="laurent.floch@ird.fr" name="Laurent Floch"/>
             <author email="pascal.cauquil@ird.fr" name="Pascal Cauquil"/>
         </authors>
-        <url>http://www.ot.ird.fr</url>
+        <url>https://git.outils-is.ird.fr/Observatoire_thonier/akado2</url>
         <uninstaller name="Uninstaller.jar" write="yes"/>
         <javaversion>1.7</javaversion>
         <requiresjdk>false</requiresjdk>

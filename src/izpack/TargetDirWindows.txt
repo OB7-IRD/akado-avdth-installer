@@ -1,1 +1,1 @@
-C:\Obs_Thonier\AKaDo2
+${ENV[USERPROFILE]}\Ob7_apps\AKaDo2
