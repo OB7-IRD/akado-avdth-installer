@@ -22,7 +22,7 @@ Author: Julien Lebranchu <julien.lebranchu@ird.fr>
 <shortcuts>
     <skipIfNotSupported/>   
     <defaultCurrentUser/>
-    <programGroup defaultName="Observatoire Thonier\AKaDo"
+    <programGroup defaultName="Ob7\AKaDo"
                   location="applications"/>
     <shortcut
         name="AKaDo 2"
