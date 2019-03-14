@@ -2,13 +2,13 @@
 <installation version="1.0">
     <info>
         <appname>AKaDo</appname>
-        <appversion>2.0.4</appversion>
+        <appversion>2.0.5</appversion>
         <authors>
             <author email="julien.lebranchu@ird.fr" name="Julien Lebranchu"/>
             <author email="laurent.floch@ird.fr" name="Laurent Floch"/>
             <author email="pascal.cauquil@ird.fr" name="Pascal Cauquil"/>
         </authors>
-        <url>https://git.outils-is.ird.fr/Observatoire_thonier/akado2</url>
+        <url>https://github.com/OB7-IRD/akado2</url>
         <uninstaller name="Uninstaller.jar" write="yes"/>
         <javaversion>1.7</javaversion>
         <requiresjdk>false</requiresjdk>
@@ -43,7 +43,7 @@
     <resources>
         <res id="installer.langsel.img" src="akado_content/img/logo_akado_h100.png"/>
         <res id="Heading.image" src="akado_content/img/logo_akado_h100.png"/>
-        <res id="Installer.image" src="akado_content/img/ird_ot_228x223.png"/>
+        <res id="Installer.image" src="akado_content/img/ob7_ird.png"/>
 	
         <res id="LicencePanel.licence" parse="yes" src="akado_content/Licence.txt"/>
         <res id="HTMLInfoPanel.readme" src="akado_content/Readme.txt"/>
@@ -93,7 +93,7 @@
             <executable targetfile="$INSTALL_PATH/delete-config.sh" stage="never">
                 <os family="unix"/>
             </executable>
-            <fileset override="update" dir="akado_content/resource/shp" targetdir="$INSTALL_PATH/resource/shp"/>
+            <fileset override="update" dir="akado_content/resource/shp" targetdir="$INSTALL_PATH/resources/shp"/>
         </pack>
         <pack name="Licence" preselected="yes" required="yes">
             <description>Copy the AKado's licence.</description>

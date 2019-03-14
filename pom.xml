@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>fr.ird</groupId>
     <artifactId>akado-avdth-installer</artifactId>
-    <version>2.0.4</version>    
+    <version>2.0.5</version>    
     <name>AKaDo :: AVDTH Installer</name>
     <description>AKaDo 4 AVDTH installer based on IzPack</description>
     <organization>
-        <name>Observatoire thonier, IRD</name>
+        <name>Observatoire des Ecosystèmes Pélagiques Tropicaux exploités, IRD</name>
         <url>http://www.ird.fr/</url>
     </organization>
     <licenses>
@@ -37,7 +37,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <izpack.staging>${project.build.directory}/staging</izpack.staging>
         <izpack-standalone.version>4.3.5</izpack-standalone.version>
-        <akado.version>2.0.4</akado.version>
+        <akado.version>2.0.5</akado.version>
     </properties>
     
     <dependencies>
