@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
-<installation version="1.0">
+<izpack:installation version="5.0"
+                     xmlns:izpack="http://izpack.org/schema/installation"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://izpack.org/schema/installation http://izpack.org/schema/5.0/izpack-installation-5.0.xsd">
+
     <info>
         <appname>AKaDo</appname>
-        <appversion>2.0.5</appversion>
+        <appversion>2.0.6</appversion>
         <authors>
             <author email="julien.lebranchu@ird.fr" name="Julien Lebranchu"/>
             <author email="laurent.floch@ird.fr" name="Laurent Floch"/>
@@ -10,7 +13,7 @@
         </authors>
         <url>https://github.com/OB7-IRD/akado2</url>
         <uninstaller name="Uninstaller.jar" write="yes"/>
-        <javaversion>1.7</javaversion>
+        <javaversion>16</javaversion>
         <requiresjdk>false</requiresjdk>
         <writeinstallationinformation>no</writeinstallationinformation>
         <run-privileged condition="izpack.windowsinstall.vista|izpack.windowsinstall.7"/>
@@ -20,7 +23,7 @@
             <os family="windows"/>
             <param name="variant" value="windows"/>
         </laf>
-        <laf name="metouia">
+        <laf name="kunststoff">
             <os family="unix"/>
         </laf>
         <modifier key="langDisplayType" value="native"/>
@@ -44,24 +47,24 @@
         <res id="installer.langsel.img" src="akado_content/img/logo_akado_h100.png"/>
         <res id="Heading.image" src="akado_content/img/logo_akado_h100.png"/>
         <res id="Installer.image" src="akado_content/img/ob7_ird.png"/>
-	
+
         <res id="LicencePanel.licence" parse="yes" src="akado_content/Licence.txt"/>
         <res id="HTMLInfoPanel.readme" src="akado_content/Readme.txt"/>
         <res id="TargetPanel.dir.windows" src="TargetDirWindows.txt"/>
-        <res id="TargetPanel.dir.unix" src="TargetDirUnix.txt" />
-        <res src="izres/default_shortcut_spec.xml" id="shortcutSpec.xml"/>
-        <res src="izres/default_shortcut_spec_fr.xml" id="shortcutSpec.xml_fra"/>
-        <res src="izres/default_shortcut_spec_es.xml" id="shortcutSpec.xml_esp"/>
-        <res src="izres/unix_shortcut_spec_en.xml" id="Unix_shortcutSpec.xml"/>
-        <res src="izres/unix_shortcut_spec_fr.xml" id="Unix_shortcutSpec.xml_fra"/>
-        <res src="izres/unix_shortcut_spec_es.xml" id="Unix_shortcutSpec.xml_esp"/>
+        <res id="TargetPanel.dir.unix" src="TargetDirUnix.txt"/>
+        <!--        <res src="izres/default_shortcut_spec.xml" id="shortcutSpec.xml"/>-->
+        <!--        <res src="izres/default_shortcut_spec_fr.xml" id="shortcutSpec.xml_fra"/>-->
+        <!--        <res src="izres/default_shortcut_spec_es.xml" id="shortcutSpec.xml_esp"/>-->
+        <!--        <res src="izres/unix_shortcut_spec_en.xml" id="Unix_shortcutSpec.xml"/>-->
+        <!--        <res src="izres/unix_shortcut_spec_fr.xml" id="Unix_shortcutSpec.xml_fra"/>-->
+        <!--        <res src="izres/unix_shortcut_spec_es.xml" id="Unix_shortcutSpec.xml_esp"/>-->
         <!--<res id="ProcessPanel.Spec.xml" src="resources/processPanelSpec.xml"/>-->
     </resources>
     <panels>
         <panel classname="HelloPanel"/>
-        <panel classname="HTMLInfoPanel" id="readme" />
+        <panel classname="HTMLInfoPanel" id="readme"/>
         <panel classname="LicencePanel"/>
-        <panel classname="ImgPacksPanel"/>
+        <!--        <panel classname="ImgPacksPanel"/>-->
         <panel classname="TargetPanel"/>
         <panel classname="SummaryPanel" id="summarypanel"/>
         <panel classname="InstallPanel"/>
@@ -69,7 +72,7 @@
         <!--<panel classname="ProcessPanel"/>-->
         <panel classname="SimpleFinishPanel"/>
     </panels>
-    <variables>    
+    <variables>
         <variable name="InstallerFrame.logfilePath" value="$INSTALL_PATH/logs/install.log"/>
         <!-- This means that the log name will be My-install and that
         it will be stored at the root of the installation. -->
@@ -104,17 +107,19 @@
             <description>Copy the AKado's readme.</description>
             <file override="update"
                   src="akado_content/Readme.txt" targetdir="$INSTALL_PATH/"/>
-        </pack>   
+        </pack>
         <pack name="Documentation-PDF" preselected="yes" required="no">
             <description>Copy the AKado's user documentation.</description>
             <fileset override="update"
                      dir="akado_content/doc/" targetdir="$INSTALL_PATH/doc/"/>
-        </pack>   
+        </pack>
     </packs>
-    <native type="izpack" name="ShellLink.dll">
-        <os family="windows" />
-    </native>
-    <native type="izpack" name="ShellLink_x64.dll">
-        <os family="windows" />
-    </native>
-</installation>
+    <natives>
+        <native type="izpack" name="ShellLink.dll">
+            <os family="windows"/>
+        </native>
+        <native type="izpack" name="ShellLink_x64.dll">
+            <os family="windows"/>
+        </native>
+    </natives>
+</izpack:installation>
