@@ -179,7 +179,5 @@
                 </configuration>
             </plugin>
         </plugins>
-
-            <finalName>my-akado-avdth-installer-2.0.6</finalName>
       </build>
 </project>
