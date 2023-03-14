@@ -178,6 +178,7 @@
                             <!-- base for relative paths in izpack descriptor -->
                             <baseDir>${izpack.staging}</baseDir>
                             <installFile>${basedir}/src/izpack/install.xml</installFile>
+                            <classifier>exe</classifier>
                         </configuration>
                     </execution>
                 </executions>
