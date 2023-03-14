@@ -35,6 +35,8 @@
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <izpack.staging>${project.build.directory}/staging</izpack.staging>
 <!--        <izpack-standalone.version>5.0.9</izpack-standalone.version>-->
         <izpack.version>5.1.3</izpack.version>
